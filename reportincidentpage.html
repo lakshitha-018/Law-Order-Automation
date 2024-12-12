@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Incident</title>
+    <link rel="stylesheet" href="reportincidentpage.css">
+</head>
+<body>
+    <div class="logo">
+        <h1>Incident Tracker</h1>
+    </div>
+
+    <!-- Incident Form Container -->
+    <div class="form-container">
+        <h2>Report an Incident</h2>
+
+        <!-- Form starts here -->
+        <form action="admin.html" method="POST" enctype="multipart/form-data">
+            <!-- Incident Type Dropdown -->
+            <label for="report_type">Report Type:</label>
+            <select id="report_type" name="report_type" required>
+                <option value="theft">Theft</option>
+                <option value="assault">Assault</option>
+                <option value="vandalism">Vandalism</option>
+                <option value="harassment">Harassment</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Location Input -->
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter the location" required>
+
+            <!-- Incident Description -->
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" placeholder="Describe the incident" required></textarea>
+
+            <!-- Attachment Option -->
+            <label for="attachments">Attachments (Optional):</label>
+            <input type="file" id="attachments" name="attachments[]" multiple>
+
+            <!-- Option for Anonymous Report -->
+            <label for="anonymous_report">Submit as Anonymous:</label>
+            <input type="checkbox" id="anonymous_report" name="anonymous_report">
+
+            <!-- Case Tracking Number -->
+            <label for="tracking_number">Case Tracking Number:</label>
+            <input type="text" id="tracking_number" name="tracking_number" readonly placeholder="Generated after submission">
+
+            <!-- Direct Station Notification -->
+            <label for="urgent_notification">Notify nearest police station:</label>
+            <input type="checkbox" id="urgent_notification" name="urgent_notification">
+            <br>
+
+            
+        </form>
+        <form id="incidentForm">
+            <!-- Form fields go here -->
+            <button type="submit">Submit Report</button>
+        </form>
+        
+        <script>
+            document.getElementById('incidentForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+                alert('Report submitted successfully! Redirecting to the Admin Page...');
+                window.location.href = 'admin.html'; // Redirect to Admin Page
+            });
+        </script>
+        
+    </div>
+</body>
+</html>

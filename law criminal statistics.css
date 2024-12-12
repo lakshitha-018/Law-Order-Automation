@@ -1,0 +1,109 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+}
+
+/* Container for the statistics page */
+.statistics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #001f54; /* Dark navy blue for the statistics container */
+    border-radius: 10px;
+}
+
+/* Section titles */
+h2 {
+    font-size: 28px;
+    color: #d4af37; /* Gold for section titles */
+    text-transform: uppercase;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Filter options styling */
+.filter-options {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+select, input[type="date"] {
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #d4af37; /* Gold border */
+    background-color: #6b7280; /* Gray background */
+    color: #ffffff;
+}
+
+/* Table styling */
+.crime-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.crime-table th, .crime-table td {
+    padding: 12px;
+    border: 1px solid #d4af37; /* Gold borders for table */
+    text-align: left;
+    color: #ffffff;
+}
+
+.crime-table th {
+    background-color: #000000; /* Black background for table headers */
+    color: #d4af37; /* Gold text for table headers */
+}
+
+/* Graph section */
+.graph-section {
+    margin-bottom: 30px;
+}
+
+/* Heatmap section */
+.heat-map-section {
+    margin-bottom: 30px;
+}
+
+.heatmap {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #d4af37; /* Gold border around the heatmap image */
+    border-radius: 10px;
+}
+
+/* Limited Access Section */
+.non-registered-view {
+    margin-bottom: 30px;
+    background-color: #8b0000; /* Dark red for limited access notification */
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.non-registered-view p {
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #d4af37; /* Gold button */
+    color: #000000; /* Black text */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text */
+}

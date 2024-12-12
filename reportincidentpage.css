@@ -1,0 +1,99 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+}
+
+/* Form Container */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #001f54; /* Dark navy blue background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for contrast */
+}
+
+/* Section titles */
+h2 {
+    font-size: 28px;
+    color: #d4af37; /* Gold for section titles */
+    text-transform: uppercase;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #d4af37; /* Gold for labels */
+}
+
+/* Input fields and textarea styling */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d4af37; /* Gold borders for inputs */
+    border-radius: 5px;
+    background-color: #001f54; /* Dark navy blue background for inputs */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Read-only input field styling */
+input[readonly] {
+    background-color: #ffaeae; /* Light red for read-only inputs */
+    color: #ffffff; /* White text */
+    cursor: not-allowed;
+}
+
+/* File input styling */
+input[type="file"] {
+    padding: 5px;
+    color: #ffffff; /* White text for file input */
+}
+
+/* Checkbox input styling */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    accent-color: #d4af37; /* Gold checkboxes */
+}
+
+/* Submit button styling */
+button {
+    padding: 12px 20px;
+    background-color: #d4af37; /* Gold button background */
+    color: #000000; /* Black text on button for contrast */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+/* Mobile responsive styling */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}

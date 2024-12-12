@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="admin dashboard.css">
+
+    <!-- Include any external libraries (e.g., Chart.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Header Section with Logo -->
+    <div class="admin-logo">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <!-- User and Officer Management Section -->
+    <section class="user-management">
+        <h2>User and Officer Management</h2>
+
+        <!-- Management Actions -->
+        <div class="management-actions">
+            <button class="btn">Add New User</button>
+            <button class="btn">Add New Officer</button>
+            <button class="btn">Edit User/Officer</button>
+            <button class="btn">Suspend User/Officer</button>
+        </div>
+
+        <!-- User/Officer Table -->
+        <table class="management-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12345</td>
+                    <td>John Doe</td>
+                    <td>Officer</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="btn">Edit</button>
+                        <button class="btn-danger">Suspend</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>67890</td>
+                    <td>Jane Smith</td>
+                    <td>Citizen</td>
+                    <td>Suspended</td>
+                    <td>
+                        <button class="btn">Edit</button>
+                        <button class="btn">Reinstate</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Case Monitoring Section -->
+    <section class="case-monitoring">
+        <h2>Case Monitoring</h2>
+
+        <!-- Case Monitoring Table -->
+        <table class="case-table">
+            <thead>
+                <tr>
+                    <th>Case ID</th>
+                    <th>Description</th>
+                    <th>Assigned Officer</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CASE-101</td>
+                    <td>Burglary in South Zone</td>
+                    <td>Officer John Doe</td>
+                    <td>Ongoing</td>
+                    <td>High</td>
+                    <td>
+                        <button class="btn">View</button>
+                        <button class="btn-danger">Escalate</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CASE-102</td>
+                    <td>Assault in East Zone</td>
+                    <td>Officer Jane Smith</td>
+                    <td>Resolved</td>
+                    <td>Medium</td>
+                    <td>
+                        <button class="btn">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Crime Overview Section -->
+    <section class="crime-overview">
+        <h2>Crime Overview</h2>
+
+        <!-- Chart Section for Crime Overview -->
+        <canvas id="crimeOverviewChart"></canvas>
+    </section>
+    <section class="crime-statistics">
+        <h2>Crime Statistics</h2>
+        <div class="dashboard-item">
+            <h3>View Crime Data</h3>
+            <p>Access detailed crime statistics, trends, and heat maps.</p>
+            <a href="law criminal statistics.html" class="btn">Go to Crime Statistics</a>
+        </div>
+    </section>
+
+    <!-- Script for Crime Overview Chart -->
+    <script>
+        const ctx = document.getElementById('crimeOverviewChart').getContext('2d');
+        const crimeOverviewChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Theft', 'Assault', 'Fraud', 'Burglary', 'Vandalism'], // Sample crime categories
+                datasets: [{
+                    label: 'Crime Reports',
+                    data: [50, 30, 40, 60, 20], // Sample data
+                    backgroundColor: ['#001f54', '#8b0000', '#d4af37', '#6b7280', '#000000'], // Color palette
+                    borderColor: '#ffffff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    
+
+</body>
+</html>

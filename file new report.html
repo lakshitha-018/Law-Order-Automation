@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a New Report</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="dashboard buttons.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>File a New Report</h1>
+        <form id="reportForm" class="dashboard-section">
+            <label for="incidentType">Incident Type:</label>
+            <input type="text" id="incidentType" name="incidentType" required>
+            <br><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <br><br>
+            <button type="submit" class="btn btn-report">Submit Report</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Report submitted successfully!');
+        });
+    </script>
+</body>
+</html>

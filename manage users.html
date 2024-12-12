@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="dashboard buttons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f54;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #181717;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-container, .table-container {
+            margin-top: 30px;
+        }
+        .form-container input, .form-container select, .form-container button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 200px;
+            font-size: 16px;
+        }
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .table-container th, .table-container td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .table-container th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .action-btn {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .action-btn.edit {
+            background-color: #FFC107;
+        }
+        .action-btn.delete {
+            background-color: #DC3545;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Manage Users</h1>
+
+        <!-- Form to Add/Edit Users -->
+        <div class="form-container">
+            <h3>Add New User</h3>
+            <form id="userForm">
+                <label for="userType">User Type:</label>
+                <select id="userType" name="userType">
+                    <option value="citizen">Citizen</option>
+                    <option value="officer">Officer</option>
+                </select>
+
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" name="userName" required>
+
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" required>
+
+                <label for="userPhone">Phone:</label>
+                <input type="text" id="userPhone" name="userPhone" required>
+
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+
+        <!-- Table to Display Users -->
+        <div class="table-container">
+            <h3>Existing Users</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User Type</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable">
+                    <!-- User data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sample user data
+        const users = [
+            { userType: 'citizen', name: 'John Doe', email: 'johndoe@example.com', phone: '123-456-7890' },
+            { userType: 'officer', name: 'Officer Smith', email: 'officersmith@example.com', phone: '987-654-3210' }
+        ];
+
+        // Function to render the user data in the table
+        function renderUserTable() {
+            const tableBody = document.getElementById('userTable');
+            tableBody.innerHTML = ''; // Clear current table rows
+            users.forEach((user, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.userType}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
+                    <td>
+                        <button class="action-btn edit" onclick="editUser(${index})">Edit</button>
+                        <button class="action-btn delete" onclick="deleteUser(${index})">Delete</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to handle adding new user
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userType = document.getElementById('userType').value;
+            const userName = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const userPhone = document.getElementById('userPhone').value;
+
+            const newUser = { userType, name: userName, email: userEmail, phone: userPhone };
+            users.push(newUser); // Add new user to the array
+            renderUserTable(); // Re-render the table
+            this.reset(); // Reset the form fields
+        });
+
+        // Function to handle editing user
+        function editUser(index) {
+            const user = users[index];
+            document.getElementById('userType').value = user.userType;
+            document.getElementById('userName').value = user.name;
+            document.getElementById('userEmail').value = user.email;
+            document.getElementById('userPhone').value = user.phone;
+
+            // Optionally, change the button text to "Update User"
+            const submitButton = document.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Update User';
+            
+            // Remove the user from the array temporarily for update
+            users.splice(index, 1);
+        }
+
+        // Function to handle deleting user
+        function deleteUser(index) {
+            users.splice(index, 1); // Remove user from the array
+            renderUserTable(); // Re-render the table
+        }
+
+        // Initial render of users
+        renderUserTable();
+    </script>
+</body>
+</html>

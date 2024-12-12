@@ -1,0 +1,92 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+}
+
+/* Admin Dashboard container */
+.admin-dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #001f54; /* Dark navy blue background */
+    border-radius: 10px;
+}
+
+/* Section titles */
+h2 {
+    font-size: 28px;
+    color: #d4af37; /* Gold for section titles */
+    text-transform: uppercase;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    background-color: #d4af37; /* Gold button */
+    color: #000000; /* Black text */
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-danger {
+    padding: 10px 15px;
+    background-color: #8b0000; /* Dark red for dangerous actions */
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #ff0000;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #d4af37; /* Gold borders */
+    text-align: left;
+}
+
+th {
+    background-color: #000000; /* Black background for table headers */
+    color: #d4af37; /* Gold text */
+}
+
+td {
+    background-color: #001f54; /* Navy background for table cells */
+    color: #ffffff; /* White text */
+}
+
+/* Case monitoring specific */
+.case-table td:nth-child(5), .management-table td:nth-child(4) {
+    font-weight: bold;
+    color: #d4af37; /* Highlight priority or status in gold */
+}
+
+/* Chart styling */
+canvas {
+    margin-top: 20px;
+    background-color: #ffffff; /* White background for charts */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

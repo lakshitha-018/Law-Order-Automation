@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Times New Roman, sans-serif;
+    line-height: 1.6;
+	background-image:url('https://img.freepik.com/premium-photo/3d-photorealistic-depiction-scales-gavel_1153807-14749.jpg?size=626&ext=jpg&ga=GA1.1.134818236.1727326763&semt=ais_hybrid');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-attachment:fixed;
+}
+header {
+    background-color:#110B68;
+    color: white;
+    padding: 20px;
+    text-align: center;
+
+}
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.language-selector select {
+    padding: 5px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.search-bar {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.search-bar input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #110B68;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #003f8a;
+}
+
+.auth-links {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.auth-links a {
+    color:black;
+    text-decoration: none;
+    margin: 0 10px;
+	font-size:20px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.statistics {
+    background-color:rgba(0,0,0,0.7);
+    padding: 40px 20px;
+    text-align: center;
+	
+}
+
+.statistics h2 {
+    margin-bottom:80px;
+    color: black;
+	background-color:lightblue;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background-color: lightblue;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+.stat-item h3 {
+    color: #0056b3;
+}
+
+.stat-item p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+		font-family:Arial;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

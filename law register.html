@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+	<link rel="stylesheet" href="register.css">
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            background: url('https://t4.ftcdn.net/jpg/05/16/20/99/360_F_516209984_APT701DWSDCUPzErByEByUrqEjHwRYCX.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background:black; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.2); 
+            color: white;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7); 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFD700; /* Gold color */
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #FFC107;
+        }
+
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registrationForm">
+            <label for="role">Select Role:</label>
+            <select id="role" name="role" required>
+                <option value="">Select Role</option>
+                <option value="Citizen">Citizen</option>
+                <option value="Officer">Officer</option>
+                <option value="Legal Advisor">Legal Advisor</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" placeholder="Enter your contact" required>
+
+            <label for="region">Region/Station:</label>
+            <input type="text" id="region" name="region" placeholder="Enter your region/station" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+            <button type="submit">Register</button>
+            <div class="message" id="message"></div>
+        </form>
+        <div class="message" id="message"></div>
+        <a href="law dashboard.html" class="btn" id="dashboardLink" style="display:none;">Go to Dashboard</a>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const form = document.getElementById("registrationForm");
+                const messageDiv = document.getElementById("message");
+                const dashboardLink = document.getElementById("dashboardLink");
+        
+                form.addEventListener("submit", (event) => {
+                    event.preventDefault(); // Prevent default form submission
+                    
+                    // Extract form data
+                    const formData = {
+                        role: form.role.value,
+                        name: form.name.value.trim(),
+                        email: form.email.value.trim(),
+                        password: form.password.value.trim(),
+                        contact: form.contact.value.trim(),
+                        region: form.region.value.trim(),
+                        address: form.address.value.trim(),
+                    };
+        
+                    // Simple validation
+                    if (!formData.role || !formData.name || !formData.email || !formData.password || 
+                        !formData.contact || !formData.region || !formData.address) {
+                        showMessage("All fields are required!", "error");
+                        return;
+                    }
+        
+                    if (!validateEmail(formData.email)) {
+                        showMessage("Please enter a valid email address!", "error");
+                        return;
+                    }
+        
+                    if (formData.password.length < 6) {
+                        showMessage("Password must be at least 6 characters long!", "error");
+                        return;
+                    }
+        
+                    // Simulate successful registration (replace with server request in real use)
+                    showMessage("Registration successful! Redirecting...", "success");
+                    dashboardLink.style.display = "block";
+        
+                    // Simulate a redirection to the dashboard
+                    setTimeout(() => {
+                        window.location.href = "law dashboard.html";
+                    }, 2000);
+                });
+        
+                // Helper function to display messages
+                function showMessage(msg, type) {
+                    messageDiv.textContent = msg;
+                    messageDiv.style.color = type === "success" ? "limegreen" : "red";
+                }
+        
+                // Helper function to validate email format
+                function validateEmail(email) {
+                    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return regex.test(email);
+                }
+            });
+        </script>
+        
+
+    </div>
+
+</body>
+</html>

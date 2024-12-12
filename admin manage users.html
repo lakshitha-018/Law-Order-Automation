@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="admin dashboard.css">
+</head>
+<body>
+    <div class="admin-dashboard-container">
+        <header>
+            <h1>Manage Users</h1>
+        </header>
+
+        <!-- Management Actions -->
+        <section class="management-actions">
+            <button class="btn">Add New User</button>
+            <button class="btn">Edit User</button>
+            <button class="btn-danger">Suspend User</button>
+        </section>
+
+        <!-- User Table -->
+        <table class="management-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>John Doe</td>
+                    <td>Admin</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="btn">Edit</button>
+                        <button class="btn-danger">Suspend</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Jane Smith</td>
+                    <td>User</td>
+                    <td>Suspended</td>
+                    <td>
+                        <button class="btn">Reinstate</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

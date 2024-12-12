@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="law dashboard.css">
+</head>
+<body>
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        
+        <!-- Logo or Title for the Dashboard -->
+        <div class="logo">
+            <h1>Incident Tracker Dashboard</h1>
+        </div>
+
+        <!-- Citizen Dashboard Section -->
+        <section class="dashboard-section">
+            <h2>Citizen Dashboard</h2>
+
+            <div class="dashboard-item">
+                <h3>Report Case</h3>
+                <p>Quick form to file a new incident report.</p>
+                <a href="file new report.html" class="btn">File New Report</a>
+            </div>
+
+            <div class="dashboard-item">
+                <h3>Case Tracking</h3>
+                <p>Real-time updates on filed cases.</p>
+                <a href="track your case.html" class="btn">Track Your Case</a>
+            </div>
+
+            <div class="dashboard-item">
+                <h3>Police Station Contact</h3>
+                <p>Nearest station and officer contacts.</p>
+                <a href="find nearest station.html" class="btn">Find Nearest Station</a>
+            </div>
+        </section>
+
+        <!-- Officer Dashboard Section -->
+        <section class="dashboard-section">
+            <h2>Officer Dashboard</h2>
+
+            <div class="dashboard-item">
+                <h3>Case Assignment</h3>
+                <p>List of assigned cases with priority levels.</p>
+                <a href="case assignment.html" class="btn">View Assigned Cases</a>
+            </div>
+
+            <div class="dashboard-item">
+                <h3>Crime Trends</h3>
+                <p>Data on the latest trends and areas with high crime rates.</p>
+                <a href="crime trends.html" class="btn">View Crime Trends</a>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section class="dashboard-section">
+            <h2>Admin Dashboard</h2>
+
+            <div class="dashboard-item">
+                <h3>User Management</h3>
+                <p>Control over citizens and officers' data.</p>
+                <a href="manage users.html" class="btn">Manage Users</a>
+            </div>
+
+            <div class="dashboard-item">
+                <h3>Crime Overview</h3>
+                <p>Reports on crime patterns, unsolved cases, and ongoing investigations.</p>
+                <a href="crime overview.html" class="btn">View Crime Overview</a>
+            </div>
+
+            <div class="dashboard-item">
+                <h3>Officer Performance</h3>
+                <p>Monitor and analyze officer efficiency and performance reports.</p>
+                <a href="officer performance.html" class="btn">View Officer Performance</a>
+            </div>
+        </section>
+        
+        <!-- Additional Admin Access Section -->
+        <section class="dashboard-section">
+            <h2>Admin Dashboard</h2>
+            <div class="dashboard-item">
+                <h3>Admin Access</h3>
+                <p>Manage users, cases, and view administrative reports.</p>
+                <a href="admin dashboard.html" class="btn">Go to Admin Dashboard</a>
+            </div>
+        </section>
+
+        <!-- Submit Form Section -->
+        <section class="dashboard-section">
+            <h2>Submit Your Report</h2>
+            <form id="reportForm">
+                <button type="submit" class="btn">Submit Report</button>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- JavaScript for Form Submission and Redirect -->
+    <script>
+        // Handle form submission
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            // Simulate form submission (this could be done with AJAX, if needed)
+            alert('Report Submitted! Redirecting to Admin Dashboard...');
+
+            // Redirect to the Admin Dashboard page after submission
+            window.location.href = "admin dashboard.html";
+        });
+    </script>
+    
+</body>
+</html>

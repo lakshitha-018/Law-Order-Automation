@@ -1,0 +1,90 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+}
+
+/* Reports Container */
+.reports-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #001f54; /* Dark navy blue background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+/* Page Title */
+h1 {
+    text-align: center;
+    color: #d4af37; /* Gold for main title */
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 28px;
+    color: #d4af37; /* Gold for section titles */
+    text-transform: uppercase;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #d4af37; /* Gold borders */
+    text-align: left;
+}
+
+th {
+    background-color: #000000; /* Black background for table headers */
+    color: #d4af37; /* Gold text */
+}
+
+td {
+    background-color: #001f54; /* Navy background for table cells */
+    color: #ffffff; /* White text */
+}
+
+/* Export buttons */
+button {
+    padding: 12px 20px;
+    background-color: #d4af37; /* Gold button background */
+    color: #000000; /* Black text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 600px) {
+    .reports-container {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

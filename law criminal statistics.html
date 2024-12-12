@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Statistics</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="law criminal statistics.css">
+
+    <!-- Link to a chart library for graphs (e.g., Chart.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Main Statistics Page Container -->
+    <div class="statistics-container">
+        
+        <!-- Logo or Title for the Crime Statistics -->
+        <div class="logo">
+            <h1>Crime Statistics Dashboard</h1>
+        </div>
+
+        <!-- Non-Registered User View -->
+        <section class="non-registered-view">
+            <h2>Limited Access View</h2>
+            <p>Register to view more detailed crime statistics, heat maps, and crime trends.</p>
+            <a href="law register.html" class="btn">Register for Full Access</a>
+        </section>
+
+        <!-- Table View Section -->
+        <section class="table-section">
+            <h2>Reported Crime Statistics</h2>
+
+            <!-- Filter options -->
+            <div class="filter-options">
+                <label for="region">Region:</label>
+                <select id="region">
+                    <option value="all">All Regions</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                </select>
+
+                <label for="crimeType">Crime Type:</label>
+                <select id="crimeType">
+                    <option value="all">All Types</option>
+                    <option value="theft">Theft</option>
+                    <option value="assault">Assault</option>
+                    <option value="fraud">Fraud</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+
+            <!-- Crime Table -->
+            <table class="crime-table">
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Crime Type</th>
+                        <th>Reported Cases</th>
+                        <th>Resolved Cases</th>
+                        <th>Unresolved Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>North</td>
+                        <td>Theft</td>
+                        <td>120</td>
+                        <td>80</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>South</td>
+                        <td>Assault</td>
+                        <td>100</td>
+                        <td>60</td>
+                        <td>40</td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Crime Trend Graphs Section -->
+        <section class="graph-section">
+            <h2>Crime Trend Graphs</h2>
+            <canvas id="crimeTrendGraph"></canvas>
+        </section>
+
+        <!-- Heat Maps Section -->
+        <section class="heat-map-section">
+            <h2>Crime Rate Heat Maps</h2>
+            <img src="heatmap-placeholder.png" alt="Heatmap of Crime Rates" class="heatmap">
+        </section>
+        <!-- Link to Report Incident Page -->
+<section class="report-incident-link">
+    <h2>Report a New Incident</h2>
+    <p>If you need to file a new incident report, click the button below.</p>
+    <a href="reportincidentpage.html" class="btn">Go to Report Incident Page</a>
+</section>
+
+
+    </div>
+    <script>
+        const ctx = document.getElementById('crimeTrendGraph').getContext('2d');
+        const crimeTrendGraph = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // Sample months
+                datasets: [{
+                    label: 'Crime Reports Over Time',
+                    data: [120, 90, 150, 200, 180, 220, 210], // Sample data
+                    borderColor: '#d4af37', // Gold color for the graph line
+                    backgroundColor: 'rgba(212, 175, 55, 0.2)', // Translucent gold for the fill
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

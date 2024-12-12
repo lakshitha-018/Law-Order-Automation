@@ -1,0 +1,29 @@
+/* Styling the select dropdown */
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: black; /* Solid black background for dropdown */
+    color: white; /* White text for the options */
+    appearance: none; /* Removes the default styling in some browsers */
+}
+
+/* Change the color of the selected option and focus state */
+select:focus {
+    outline: none; /* Remove the default blue outline */
+    border: 1px solid #FFD700; /* Gold color on focus */
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.7); /* Gold glowing effect */
+}
+
+/* Change the hover effect on select options */
+option {
+    background-color: black; /* Black background for options */
+    color: white; /* White text for options */
+}
+
+/* Remove blue background and keep custom styling during hover */
+select option:hover {
+    background-color: #303030; /* Darker shade on hover */
+}

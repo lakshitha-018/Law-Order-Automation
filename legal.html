@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Advisor Dashboard</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="legal.css">
+
+    <!-- Optional: Link to a library like jQuery for dynamic elements -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <!-- Main Legal Advisor Dashboard Container -->
+    <div class="legal-dashboard-container">
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Legal Advisor Dashboard</h1>
+        </div>
+
+        <!-- Case Review Section -->
+        <section class="case-review">
+            <h2>Case Review</h2>
+
+            <!-- Case List Table -->
+            <table class="case-table">
+                <thead>
+                    <tr>
+                        <th>Case ID</th>
+                        <th>Case Title</th>
+                        <th>Details</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASE-201</td>
+                        <td>Contract Fraud in North Zone</td>
+                        <td><a href="#">View Details</a></td>
+                        <td>Pending Review</td>
+                        <td><button class="btn">Submit Feedback</button></td>
+                    </tr>
+                    <tr>
+                        <td>CASE-202</td>
+                        <td>Land Dispute in East Zone</td>
+                        <td><a href="#">View Details</a></td>
+                        <td>Review Complete</td>
+                        <td><button class="btn-disabled" disabled>Feedback Submitted</button></td>
+                    </tr>
+                    <!-- More case rows as needed -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Law Archive Section -->
+        <section class="law-archive">
+            <h2>Law Archive</h2>
+
+            <!-- Search and Browse Legal Precedents -->
+            <div class="archive-search">
+                <input type="text" id="archiveSearchInput" placeholder="Search legal precedents, laws, regulations...">
+                <button class="btn" onclick="searchArchive()">Search</button>
+            </div>
+
+            <!-- Law Archive Results -->
+            <div id="archive-results" class="archive-results">
+                <ul>
+                    <li><a href="#">Criminal Law Precedents (2023)</a></li>
+                    <li><a href="#">Civil Dispute Regulations (2022)</a></li>
+                    <li><a href="#">Recent Changes to Property Laws (2024)</a></li>
+                    <!-- More links to laws and precedents -->
+                </ul>
+            </div>
+        </section>
+        
+
+        <!-- Feedback Form Section -->
+        <section class="feedback-form">
+            <h2>Submit Feedback</h2>
+
+            <form id="feedbackForm">
+                <label for="caseId">Case ID:</label>
+                <input type="text" id="caseId" name="caseId" placeholder="Enter case ID" required>
+
+                <label for="feedback">Legal Advice:</label>
+                <textarea id="feedback" name="feedback" rows="6" placeholder="Provide legal advice or recommendations" required></textarea>
+
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </section>
+        <form id="feedbackForm" action="help.html" method="GET">
+            <label for="caseId">Case ID:</label>
+            <input type="text" id="caseId" name="caseId" placeholder="Enter case ID" required>
+        
+            <label for="feedback">Legal Advice:</label>
+            <textarea id="feedback" name="feedback" rows="6" placeholder="Provide legal advice or recommendations" required></textarea>
+        
+            <button type="submit" class="btn">Submit Feedback</button>
+        </form>
+        
+
+    </div>
+
+    <!-- Optional: Add JavaScript for search functionality and form submission -->
+    <script>
+        // Handle form submission
+        $('#feedbackForm').on('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert('Feedback submitted for Case ID: ' + $('#caseId').val());
+    
+            // Redirect to Help Page
+            window.location.href = 'help.html';
+        });
+    </script>
+    
+
+</body>
+</html>

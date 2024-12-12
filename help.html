@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+    <!-- Help Page Header -->
+    <header class="help-header">
+        <h1>Help Center</h1>
+        <p>Your guide to solving issues and finding information</p>
+    </header>
+
+    <!-- Guides Section -->
+    <section class="guides">
+        <h2>Guides</h2>
+        <ul>
+            <li>Step-by-step tutorials for filing reports</li>
+            <li>How to track cases</li>
+            <li>Accessing case-related information</li>
+        </ul>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs">
+        <h2>FAQs</h2>
+        <div class="faq-item">
+            <h3>How do I file a report?</h3>
+            <p>You can file a report by clicking on the "File Report" button on the dashboard and following the steps provided.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I track the status of my case?</h3>
+            <p>Go to the "Case Monitoring" section to view updates and the current status of your case.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What should I do if I need further assistance?</h3>
+            <p>If you need more help, please use the contact form below to reach our support team.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert('Your message has been submitted. Redirecting to the Reports Page...');
+            window.location.href = 'reports.html'; // Redirect to Reports Page
+        });
+    </script>
+
+</body>
+</html>

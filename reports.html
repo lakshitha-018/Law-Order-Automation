@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Page</title>
+    <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+
+    <div class="reports-container">
+        <!-- Page Title -->
+        <h1>Crime Reports Dashboard</h1>
+
+        <!-- Daily Crime Report Section -->
+        <div class="report-section">
+            <h2>Daily Crime Report</h2>
+            <p>Track cases reported each day along with their resolution rates.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Total Cases</th>
+                        <th>Resolved Cases</th>
+                        <th>Resolution Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-11-29</td>
+                        <td>50</td>
+                        <td>45</td>
+                        <td>90%</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-28</td>
+                        <td>60</td>
+                        <td>50</td>
+                        <td>83.3%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Monthly Reports Section -->
+        <div class="report-section">
+            <h2>Monthly Reports</h2>
+            <p>Breakdown of crimes by region, type, and outcome for the current month.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Crime Type</th>
+                        <th>Total Cases</th>
+                        <th>Resolved Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Region 1</td>
+                        <td>Theft</td>
+                        <td>120</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Region 2</td>
+                        <td>Assault</td>
+                        <td>80</td>
+                        <td>70</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Officer Performance Report Section -->
+        <div class="report-section">
+            <h2>Officer Performance Report</h2>
+            <p>Performance metrics such as response times and case resolution efficiency by officer.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Officer Name</th>
+                        <th>Cases Handled</th>
+                        <th>Average Response Time</th>
+                        <th>Resolved Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Officer Smith</td>
+                        <td>30</td>
+                        <td>15 min</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>Officer Lee</td>
+                        <td>25</td>
+                        <td>20 min</td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Export Options -->
+        <div class="export-section">
+            <h2>Export Options</h2>
+            <p>Download detailed reports in the following formats:</p>
+            <button class="btn">Export to PDF</button>
+            <button class="btn">Export to Excel</button>
+        </div>
+    </div>
+
+</body>
+</html>
